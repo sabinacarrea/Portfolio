@@ -1,0 +1,538 @@
+/* --- RESET E STILI BASE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Evita lo scroll orizzontale a livello di pagina dovuto a 100vw */
+  overflow-x: hidden; 
+}
+
+body {
+  background-color: #1E1E1E;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1E1E1E;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* --- NAVBAR CHIARA --- */
+.navbar {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 80px;
+  max-width: 100%;
+}
+
+.logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #1E1E1E;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1E1E1E;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-contattami {
+  background-color: #B980E4;
+  color: #FFFFFF !important;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600 !important;
+}
+
+/* --- HERO PROGETTO --- */
+.project-hero {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  padding: 60px 80px 80px 80px;
+}
+
+.project-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* BOTTONI HERO */
+.btn-back {
+  display: inline-block;
+  color: #FFFFFF;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-back:hover {
+  border-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* TITOLO E DESCRIZIONE */
+.project-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.project-overview {
+  font-size: 1.15rem;
+  color: #CCCCCC;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.hero-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 32px;
+}
+
+/* METADATI */
+.project-meta {
+  display: flex;
+  gap: 48px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-label {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* IMMAGINE HERO A DESTRA */
+.hero-right-image {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  max-height: 460px;
+  background-color: #2A2A2A;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-right-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- SEZIONE GALLERY --- */
+.gallery-section {
+  background-color: #FFFFFF;
+  padding: 60px 80px 120px 80px;
+  margin-top: 40px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+}
+
+/* LAYOUT GRIGLIA MOCKUP E MATERIALI */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.gallery-item {
+  background-color: #F8F8F8;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #EAEAEA;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.mockup-container {
+  width: 100%;
+  height: auto;
+  background-color: #ECECEC;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup-container img,
+.mockup-container video {
+  width: 100%;
+  height: auto;
+  max-height: 550px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .mockup-container img {
+  transform: scale(1.02);
+}
+
+.gallery-caption {
+  padding: 28px 32px;
+  background-color: #FFFFFF;
+  flex-grow: 1;
+}
+
+.gallery-caption h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 8px;
+}
+
+.gallery-caption p {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.item-wide {
+  grid-column: span 2;
+}
+
+/* ==========================================
+   CAROSELLO FULL WIDTH (CORRETTO)
+   ========================================== */
+
+.square-carousel-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  overflow: hidden;
+  padding: 40px 0;
+  background-color: transparent;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollLeftToRight 25s linear infinite;
+  will-change: transform;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-item-square {
+  width: 280px;
+  height: 280px;
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.carousel-item-square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item-square:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* --- SEZIONE DETTAGLI (CHIARA) --- */
+.project-details {
+  background-color: #FFFFFF;
+  padding: 100px 80px;
+}
+
+.project-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.section-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.goals-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.goals-list li {
+  font-size: 1.05rem;
+  color: #444444;
+  line-height: 1.5;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.process-card {
+  background-color: #ECECEC;
+  border-radius: 24px;
+  padding: 28px 32px;
+}
+
+.process-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 10px;
+}
+
+.process-desc {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+/* --- FOOTER SCURO INTEGRATO --- */
+.site-footer {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.footer-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #888888;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.footer-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.footer-description {
+  font-size: 1.15rem;
+  color: #AAAAAA;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.footer-email-btn {
+  background-color: #EAEAEA;
+  color: #1E1E1E;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px 44px;
+  border-radius: 999px;
+  margin-bottom: 48px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-email-btn:hover {
+  transform: translateY(-2px);
+  background-color: #FFFFFF;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 32px;
+}
+
+.social-link {
+  color: #888888;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.footer-bottom {
+  background-color: #0E0E0E;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #777777;
+}
+
+.copyright {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+/* RESPONSIVE DESIGN PER MOBILE E TABLET */
+@media (max-width: 900px) {
+  .navbar, .project-hero, .project-details, .gallery-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .project-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .project-title {
+    font-size: 2.6rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-details-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .item-wide {
+    grid-column: span 1;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .footer-title {
+    font-size: 2.5rem;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item-square {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .carousel-track {
+    gap: 16px;
+  }
+}
