@@ -1,0 +1,765 @@
+/* --- PALETTE E FONTS DALL'IMMAGINE --- */
+:root {
+  --bg-color: #EAEAEA;          /* Grigio chiaro/panna dello sfondo */
+  --text-dark: #1E1E1E;         /* Testo e bottoni scuri */
+  --btn-purple: #B980E4;        /* Viola del bottone Contattami */
+  --badge-bg: #E6D0F7;          /* Viola chiaro per lo sfondo del badge */
+  --badge-text: #9B53D3;        /* Viola scuro per il testo del badge */
+  
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.btn-contattami {
+  background-color: var(--btn-purple);
+  color: #FFFFFF !important;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease !important;
+}
+
+.btn-contattami:hover {
+  transform: translateY(-2px);
+}
+
+/* --- HERO SECTION (A 2 COLONNE) --- */
+.hero {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 80px 100px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.hero-container {
+  flex: 1;
+  max-width: 620px;
+}
+
+/* BADGE */
+.hero-badge {
+  display: inline-block;
+  background-color: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+}
+
+/* TITOLO CON FRAUNCES */
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 4.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.hero-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* SOTTOTITOLO */
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  max-width: 580px;
+  margin-bottom: 40px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* BOTTONI */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-primary {
+  background-color: var(--text-dark);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 16px 32px;
+  border-radius: 999px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 15px 32px;
+  border-radius: 999px;
+  border: 1.5px solid var(--text-dark);
+}
+
+
+/* --- CONTAINER DEL CAROSELLO LATERALE --- */
+.project-carousel-container {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Larghezza del carosello */
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  overflow: visible; /* Permette all'effetto 3D di sporgere senza venire tagliato */
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- SINGOLA CARD QUADRATA --- */
+.carousel-card {
+  position: absolute;
+  width: 240px; /* Dimensione della card centrale */
+  aspect-ratio: 1 / 1; /* Forza la forma perfettamente quadrata */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 0;
+  pointer-events: none;
+  background-color: #2A2A2A;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garantisce che l'immagine sia quadrata senza deformarsi */
+  display: block;
+}
+
+.card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* --- STATO 1: CARD CENTRALE (Attuale - Più grande e sopra) --- */
+.carousel-card.active {
+  opacity: 1;
+  z-index: 3;
+  transform: translateX(0) scale(1.15);
+  pointer-events: auto;
+}
+
+/* --- STATO 2: PROSSIMA CARD (A Sinistra - Più piccola) --- */
+.carousel-card.next {
+  opacity: 0.75;
+  z-index: 2;
+  transform: translateX(-120px) scale(0.85);
+}
+
+/* --- STATO 3: CARD PASSATA (A Destra - Più piccola e livello sotto) --- */
+.carousel-card.prev {
+  opacity: 0.45;
+  z-index: 1;
+  transform: translateX(120px) scale(0.7);
+}
+
+
+/* --- SEZIONE CHI SONO --- */
+.about-section {
+  background-color: #1E1E1E; /* Sfondo scuro come da immagine */
+  color: #EAEAEA;            /* Testo principale chiaro */
+  padding: 100px 80px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.about-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* Layout a 2 colonne (Titolo / Testo) */
+  gap: 60px;
+  align-items: start;
+}
+
+/* BADGE CHI SONO */
+.about-badge {
+  display: inline-block;
+  background-color: rgba(185, 128, 228, 0.2); /* Viola trasparente */
+  color: #B980E4;                            /* Viola chiaro */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+
+/* TITOLO CON FRAUNCES */
+.about-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.about-title em {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #9B53D3; /* Viola d'accento per "atto civile." */
+}
+
+/* TESTI A DESTRA */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 10px;
+}
+
+.about-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #D6D6D6;
+  font-weight: 400;
+}
+
+.about-text strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+
+/* --- SEZIONE PROGETTI --- */
+.projects-section {
+  background-color: #EAEAEA; /* Sfondo chiaro come nel layout */
+  padding: 80px 80px 120px 80px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1E1E1E;
+}
+
+.projects-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* HEADER DI SEZIONE */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+}
+
+.projects-badge {
+  display: inline-block;
+  background-color: #FCE8B3; /* Giallo morbido per il badge della sezione */
+  color: #B26A00;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 18px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.projects-main-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+/* FILTRI */
+.projects-filters {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  background-color: #E0E0E0;
+  border: none;
+  color: #555555;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: #D0D0D0;
+}
+
+/* GRID A 2 COLONNE */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* CARD SINGOLA */
+.project-card {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 36px;
+  border-top: 6px solid #EA8F29; /* Bordo colorato superiore stile la tua immagine */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #FDF3D6;
+  color: #A05E00;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.card-date {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+}
+
+.card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.card-description {
+  font-size: 0.98rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.card-link {
+  color: #EA8F29;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.card-link:hover {
+  opacity: 0.8;
+}
+
+
+/* --- SEZIONE SERVIZI --- */
+.services-section {
+  background-color: #FFFFFF; /* Sfondo bianco della sezione */
+  padding: 100px 80px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1E1E1E;
+}
+
+.services-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* BADGE SERVIZI */
+.services-badge {
+  display: inline-block;
+  background-color: #E2EFE0; /* Verde salvia chiaro */
+  color: #4B7846;            /* Verde scuro per il testo */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+/* TITOLO PRINCIPALE CON FRAUNCES */
+.services-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1E1E1E;
+  margin-bottom: 56px;
+  letter-spacing: -0.02em;
+}
+
+.services-title .highlight-green {
+  color: #558B4E; /* Colore verde per la seconda riga del titolo */
+}
+
+/* GRID LAYOUT PER LE CARD */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* CARD SERVIZIO */
+.service-card {
+  background-color: #ECECEC; /* Grigio soft di sfondo per le card */
+  border-radius: 28px;        /* Angoli molto arrotondati come nel layout */
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  background-color: #E4E4E4;
+}
+
+/* TITOLO CARD */
+.service-card-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+/* DESCRIZIONE CARD */
+.service-card-desc {
+  font-size: 1.05rem;
+  color: #777777; /* Testo descrizione grigio per contrasto morbido */
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+
+/* --- FOOTER STYLES --- */
+.site-footer {
+  background-color: #1E1E1E; /* Sfondo scuro principale */
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  padding-top: 100px;
+}
+
+/* CONTAINER PRINCIPALE CTA */
+.footer-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* SUBTITLE SUPERIORE */
+.footer-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #888888;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+/* TITOLO PRINCIPALE CON FRAUNCES */
+.footer-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+/* DESCRIZIONE */
+.footer-description {
+  font-size: 1.15rem;
+  color: #AAAAAA;
+  line-height: 1.6;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+/* BOTTONE PILL EMAIL */
+.footer-email-btn {
+  background-color: #EAEAEA;
+  color: #1E1E1E;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px 44px;
+  border-radius: 999px;
+  margin-bottom: 48px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-email-btn:hover {
+  transform: translateY(-2px);
+  background-color: #FFFFFF;
+}
+
+/* LINK SOCIAL */
+.footer-socials {
+  display: flex;
+  gap: 32px;
+}
+
+.social-link {
+  color: #888888;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #FFFFFF;
+}
+
+/* BANDA BOTTOM NERA */
+.footer-bottom {
+  background-color: #0E0E0E; /* Sfondo scuro profondo per il copyright */
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #777777;
+}
+
+.copyright {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.footer-tagline {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 24px 32px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px 32px 80px 32px;
+    gap: 40px;
+  }
+
+  .hero-container {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .project-carousel-container {
+    max-width: 100%;
+    height: 360px;
+  }
+
+  .about-section {
+    padding: 60px 24px;
+  }
+  
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-title {
+    font-size: 2.8rem;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-section {
+    padding: 60px 24px;
+  }
+
+  .services-section {
+    padding: 60px 24px;
+  }
+
+  .services-title {
+    font-size: 2.8rem;
+    margin-bottom: 36px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 32px 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: 60px;
+  }
+
+  .footer-title {
+    font-size: 2.5rem;
+  }
+
+  .footer-description {
+    font-size: 1rem;
+  }
+
+  .footer-email-btn {
+    font-size: 1rem;
+    padding: 14px 28px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 0 24px;
+  }
+}
