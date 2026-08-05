@@ -12,10 +12,18 @@
 </head>
 <body>
 
-  <!-- NAVBAR CHIARA -->
+  <!-- NAVBAR CHIARA CON COLLAPSE MOBILE -->
   <header class="navbar">
-    <div class="logo">Sabina Carrea</div>
-    <nav class="nav-links">
+    <a href="../../index.html" class="logo">Sabina Carrea</a>
+
+    <!-- BOTTONE HAMBURGER MOBILE -->
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
       <a href="../../index.html#chi-sono">Chi sono</a>
       <a href="../../index.html#progetti">Progetti</a>
       <a href="../../index.html#servizi">Servizi</a>
@@ -31,9 +39,9 @@
       <div class="hero-left-content">
         
         <!-- BOTTONI -->
-        <div class="project-nav-buttons" style="display: flex; gap: 12px; margin-bottom: 32px;">
+        <div class="project-nav-buttons">
           <a href="../../index.html#progetti" class="btn-back">torna ai progetti</a>
-          <a href="https://www.ashoka.org/it-it/social-impact-prize" target="_blank" class="btn-back">Visita il sito</a>
+          <a href="https://www.ashoka.org/it-it/social-impact-prize" target="_blank" rel="noopener noreferrer" class="btn-back">Visita il sito</a>
         </div>
 
         <!-- TITOLO E DESCRIZIONE -->
@@ -48,7 +56,7 @@
         <div class="project-meta">
           <div class="meta-item">
             <span class="meta-label">Cliente</span>
-            <span class="meta-value">Ashoka Italia</span>
+            <span class="meta-value">Ashoka Italia - a|cube</span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Anno</span>
@@ -74,9 +82,9 @@
   <section class="gallery-section">
     <div class="gallery-container">
       
-      <div class="gallery-header" style="margin-bottom: 40px;">
-        <h2 class="gallery-title">Social Impact Prize </h2>
-        <p class="gallery-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 8px;">
+      <div class="gallery-header">
+        <h2 class="gallery-title">Social Impact Prize</h2>
+        <p class="gallery-subtitle">
           Panoramica dei materiali visuali creati per l'iniziativa: dalla pagina web dedicata alla promozione della call, fino ai format social e multimediali.
         </p>
       </div>
@@ -87,8 +95,8 @@
         <!-- BLOCK 1: PIATTAFORMA WEB -->
         <div class="gallery-item item-wide">
           <div class="mockup-container">
-            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="immagini/Registrazione dello schermo 2026-08-03 153231.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline>
+              <source src="immagini/Registrazione%20dello%20schermo%202026-08-03%20153231.mp4" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
           </div>
@@ -101,14 +109,14 @@
         <!-- BLOCK 2: MOBILE & REELS -->
         <div class="gallery-item item-narrow">
           <div class="mockup-container">
-            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <video autoplay loop muted playsinline>
               <source src="immagini/post2.mp4" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
           </div>
           <div class="gallery-caption">
-            <h3>social media strategy</h3>
-            <p>Formati verticali creati per ingaggiare la community e lanciare i teaser del premio sui canali social.</p>
+            <h3>Social Media Strategy</h3>
+            <p>Formati per ingaggiare la community e lanciare i teaser del premio sui canali social.</p>
           </div>
         </div>
 
@@ -127,7 +135,6 @@
 
     </div>
   </section>
-
 
   <!-- FOOTER SCURO -->
   <footer class="site-footer" id="contatti">
@@ -150,8 +157,8 @@
       </a>
 
       <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" class="social-link">LinkedIn</a>
-        <a href="https://www.behance.net/sabinacarrea" target="_blank" class="social-link">Behance</a>
+        <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+        <a href="https://www.behance.net/sabinacarrea" target="_blank" rel="noopener noreferrer" class="social-link">Behance</a>
       </div>
     </div>
 
@@ -162,6 +169,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT PER NAVBAR MOBILE -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

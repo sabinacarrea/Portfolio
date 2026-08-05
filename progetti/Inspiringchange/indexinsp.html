@@ -12,10 +12,18 @@
 </head>
 <body>
 
-  <!-- NAVBAR CHIARA -->
+  <!-- NAVBAR CHIARA CON COLLAPSE MOBILE -->
   <header class="navbar">
-    <div class="logo">Sabina Carrea</div>
-    <nav class="nav-links">
+    <a href="../../index.html" class="logo">Sabina Carrea</a>
+
+    <!-- BOTTONE HAMBURGER MOBILE -->
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
       <a href="../../index.html#chi-sono">Chi sono</a>
       <a href="../../index.html#progetti">Progetti</a>
       <a href="../../index.html#servizi">Servizi</a>
@@ -31,7 +39,7 @@
       <div class="hero-left-content">
         
         <!-- BOTTONI -->
-        <div class="project-nav-buttons" style="display: flex; gap: 12px; margin-bottom: 32px;">
+        <div class="project-nav-buttons">
           <a href="../../index.html#progetti" class="btn-back">torna ai progetti</a>
           <a href="https://www.ashoka.org/it-it/programma/inspiring-change" target="_blank" class="btn-back">Visita il sito</a>
         </div>
@@ -39,7 +47,7 @@
         <!-- TITOLO E DESCRIZIONE -->
         <h1 class="project-title">Inspiring Change</h1>
         <p class="project-overview">
-          Sviluppo dell'identità visiva, della strategia di comunicazione e della piattaforma web per Inspiring Change, l'evento promozionale di Ashoka Italia pensato per rivoluzionare il mondo della filantropia e promuovere l'importanza strategica di investire sulle organizzazioni ad alto impatto sociale anziché sui singoli progetti.
+          Sviluppo dell'identità visiva, della strategia di comunicazione e della piattaforma web per Inspiring Change, l'evento promozionale di Ashoka Italia e Assifero pensato per rivoluzionare il mondo della filantropia e promuovere l'importanza strategica di investire sulle organizzazioni ad alto impatto sociale anziché sui singoli progetti.
         </p>
 
         <hr class="hero-divider">
@@ -48,11 +56,11 @@
         <div class="project-meta">
           <div class="meta-item">
             <span class="meta-label">Cliente</span>
-            <span class="meta-value">Ashoka Italia</span>
+            <span class="meta-value">Ashoka Italia - Assifero</span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Anno</span>
-            <span class="meta-value">2025</span>
+            <span class="meta-value">2024 - 2026</span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Servizi</span>
@@ -64,7 +72,7 @@
 
       <!-- COLONNA DESTRA: IMMAGINE DI COPERTINA / LOGO -->
       <div class="hero-right-image">
-        <img src="immagin/logo.png" alt="Copertina Inspiring Change Ashoka">
+        <img src="immagini/logo.png" alt="Copertina Inspiring Change Ashoka">
       </div>
 
     </div>
@@ -74,11 +82,10 @@
   <section class="gallery-section">
     <div class="gallery-container">
       
-      <div class="gallery-header" style="margin-bottom: 40px;">
+      <div class="gallery-header">
         <h2 class="gallery-title">Inspiring Change</h2>
-        <p class="gallery-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 8px;">
-          Panoramica dell'ecosistema visivo realizzato per l'iniziativa: dalla landed page ufficiale dedicata all'evento, fino alle grafiche social pensate per sensibilizzare donors e partner sul nuovo paradigma della filantropia.
-        </p>
+        <p class="gallery-subtitle">
+          Panoramica dell'ecosistema visivo realizzato per l'iniziativa: dalla landing page ufficiale dedicata all'evento, grafiche social.
       </div>
 
       <!-- GRIGLIA MOCKUP E MATERIALI -->
@@ -87,8 +94,8 @@
         <!-- BLOCK 1: PIATTAFORMA WEB -->
         <div class="gallery-item item-wide">
           <div class="mockup-container">
-            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="immagin/Registrazione dello schermo 2026-08-04 093714.mp4">
+            <video autoplay loop muted playsinline>
+              <source src="immagini/Registrazione dello schermo 2026-08-04 093714.mp4" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
           </div>
@@ -101,26 +108,24 @@
         <!-- BLOCK 2: MOBILE & REELS -->
         <div class="gallery-item item-narrow">
           <div class="mockup-container">
-            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
-              <source src="immagin/social.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline>
+              <source src="immagini/social.mp4" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
           </div>
           <div class="gallery-caption">
             <h3>Social Media Strategy</h3>
-            <p>Contenuti video dinamici e format verticali per ingaggiare la community, promuovere le tematiche dell'evento e guidare il pubblico verso una nuova visione di sostegno al terzo settore.</p>
-          </div>
+            <p>Contenuti per ingaggiare la community alla partecipazione degli eventi.
         </div>
 
         <!-- BLOCK 3: CAROUSEL SOCIAL & MATERIALI VISUALI -->
         <div class="gallery-item item-square">
           <div class="mockup-container">
-            <img src="immagin/social.png" alt="Mockup Caroselli e Grafiche Inspiring Change">
+            <img src="immagini/social.png" alt="Mockup Caroselli e Grafiche Inspiring Change">
           </div>
           <div class="gallery-caption">
             <h3>Campaign & Editorial Content</h3>
-            <p>Sviluppo di caroselli e infografiche per spiegare visivamente perché finanziare le organizzazioni e la loro sostenibilità sia più efficace rispetto alla logica del singolo progetto.</p>
-          </div>
+            <p>Sviluppo di caroselli social per evidenziare location e speaker dell'evento.
         </div>
 
       </div>
@@ -161,6 +166,17 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT PER NAVBAR MOBILE -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

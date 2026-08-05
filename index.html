@@ -5,382 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabina Carrea - Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts: Fraunces e Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<script src="script.js"></script>
 <body>
 
   <!-- NAVBAR -->
-  <header class="navbar">
+  <nav class="navbar">
     <div class="logo">Sabina Carrea</div>
-    <nav class="nav-links">
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#progetti">Progetti</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#contatti" class="btn-contattami">Contattami</a>
-    </nav>
-  </header>
+
+    <button class="menu-toggle" aria-label="Apri menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#progetti">Progetti</a></li>
+      <li><a href="#chi-sono">Chi sono</a></li>
+      <li><a href="#servizi">Servizi</a></li>
+      <li><a href="#contatti" class="btn-contattami">Contattami</a></li>
+    </ul>
+  </nav>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-container">
       
-      <!-- BADGE / TAG -->
       <div class="hero-badge">
         GRAPHIC DESIGNER AND SOCIAL IMPACT COMMUNICATOR
       </div>
 
-      <!-- TITOLO PRINCIPALE -->
       <h1 class="hero-title">
         Visual Design <br>
         e <em>Strategie</em> <br>
         per l'Impatto Sociale.
       </h1>
 
-      <!-- SOTTOTITOLO -->
       <p class="hero-subtitle">
         Unisco creatività e visione strategica per dare voce alle cause sociali, valorizzare le comunità e comunicare con significato.
       </p>
 
-      <!-- CALL TO ACTION -->
       <div class="hero-actions">
         <a href="#progetti" class="btn-primary">GUARDA I PROGETTI</a>
-        <a href="#collaboriamo" class="btn-secondary">COLLABORIAMO</a>
+        <a href="#contatti" class="btn-secondary">COLLABORIAMO</a>
       </div>
 
     </div>
-
-   <!-- COLONNA DI DESTRA: CAROSELLO 3D -->
-    <div class="project-carousel-container">
-      <div class="carousel-track" id="carouselTrack">
-        
-        <div class="carousel-card">
-          <img src="progetti/cmd/immagini/cmd_logo.png" alt="Anteprima Progetto 1">
-          <div class="card-caption">Ashoka Changemaker Days</div>
-        </div>
-
-        <div class="carousel-card">
-          <img src="progetti/SIP/immagini/logo.png" alt="Anteprima Progetto 2">
-          <div class="card-caption">Social Impact prize</div>
-        </div>
-
-        <div class="carousel-card">
-          <img src="progetti/oniria/immagini/logo.png" alt="Anteprima Progetto 3">
-          <div class="card-caption">Oniria</div>
-        </div>
-        <div class="carousel-card">
-          <img src="progetti/Croce Rossa Comitato di Gavi/immagini/cardht.png" alt="Anteprima Progetto 4">
-          <div class="card-caption">Croce Rossa</div>
-        </div>
-        <div class="carousel-card">
-          <img src="progetti/Inspiringchange/immagin/logo.png" alt="Anteprima Progetto 4">
-          <div class="card-caption">Inspiring Change</div>
-        </div>
-       <div class="carousel-card">
-          <img src="progetti/mappatura/immagini/logo.png" alt="Anteprima Progetto 4">
-          <div class="card-caption">Mappatura</div>
-        </div>
-        
-
-      </div>
-
-  </div>
-</div> 
   </section>
 
-<section class="about-section">
-  <div class="about-container">
-    
-    <!-- COLONNA SINISTRA: TITOLO E BADGE -->
-    <div class="about-left">
-      <div class="about-badge">CHI SONO</div>
-      <h2 class="about-title">
-        Design come <br>
-        <em>atto civile.</em>
-      </h2>
-    </div>
-
-    <!-- COLONNA DESTRA: TESTI DESCRITTIVI -->
-    <div class="about-right">
-      <p class="about-text">
-        Sono Sabina Carrea, Graphic Designer con una laurea triennale in 
-        <strong>Design e Comunicazione Visiva</strong> al Politecnico di Torino e una magistrale in 
-        <strong>Comunicazione, ICT e Media</strong> all'Università degli Studi di Torino.
-      </p>
-
-      <p class="about-text">
-        Lavoro dove <strong>design e terzo settore si incontrano</strong>: 
-        con <strong>Ashoka Italia</strong> e  <strong>Croce Rossa Italiana</strong> per campagne di salute e raccolta fondi.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section class="projects-section" id="progetti">
-  <div class="projects-container">
-    
-    <!-- HEADER DI SEZIONE + FILTRI -->
-    <div class="projects-header">
-      <div class="projects-title-wrapper">
-        <span class="projects-badge">PROGETTI</span>
-        <h2 class="projects-main-title">Progetti</h2>
+  <!-- SEZIONE CHI SONO -->
+  <section class="about-section" id="chi-sono">
+    <div class="about-container">
+      
+      <div class="about-left">
+        <div class="about-badge">CHI SONO</div>
+        <h2 class="about-title">
+          Design come <br>
+          <em>atto civile.</em>
+        </h2>
       </div>
 
-      <!-- FILTRI CATEGORIE -->
-      <div class="projects-filters">
-        <button class="filter-btn active">TUTTI</button>
-        <button class="filter-btn">Branding</button>
-        <button class="filter-btn">Web</button>
-        <button class="filter-btn">Social Media</button>
-        <button class="filter-btn">Campagne</button>
+      <div class="about-right">
+        <p class="about-text">
+          Sono Sabina Carrea, Graphic Designer con una laurea triennale in 
+          <strong>Design e Comunicazione Visiva</strong> al Politecnico di Torino e una magistrale in 
+          <strong>Comunicazione, ICT e Media</strong> all'Università degli Studi di Torino.
+        </p>
+
+        <p class="about-text">
+          Progetto dove il design si mette al servizio del <strong>Terzo Settore</strong>: 
+          creo <strong>strategie visive</strong>, campagne di sensibilizzazione e progetti per il <strong>no-profit</strong>, 
+          guidata dalla convinzione che una buona comunicazione possa amplificare l'impatto di ogni causa sociale.
+        </p>
       </div>
+
     </div>
+  </section>
 
-    <!-- GRID PROGETTI -->
-    <div class="projects-grid">
-
-        <!-- CARD 1 -->
-    <article class="project-card">
-    <div class="card-header">
-        <div class="card-tags">
-        <span class="tag">Branding</span>
-        <span class="tag">Web</span>
-        <span class="tag">Campagne</span>
+  <!-- SEZIONE PROGETTI -->
+  <section class="projects-section" id="progetti">
+    <div class="projects-container">
+      
+      <div class="projects-header">
+        <div class="projects-title-wrapper">
+          <span class="projects-badge">PROGETTI</span>
+          <h2 class="projects-main-title">Progetti</h2>
         </div>
-        <span class="card-date">2025 - 2026</span>
-    </div>
-    <h3 class="card-title">Ashoka Changemaker Days</h3>
-    <p class="card-description">
-        Identità visiva, naming e asset digitali per i principali raduni della community di Ashoka Italia.
-    </p>
-    
-    <!-- LINK CORRETTO ALLA TUA PAGINA INTERNA -->
-    <a href="progetti/cmd/indexcmd.html" class="card-link">Scopri il progetto</a>
-    </article>
 
-      <!-- CARD 2 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Campagne</span>
+        <div class="projects-filters">
+          <button class="filter-btn active">TUTTI</button>
+          <button class="filter-btn">Branding</button>
+          <button class="filter-btn">Web</button>
+          <button class="filter-btn">Social Media</button>
+          <button class="filter-btn">Campagne</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Web</span>
+              <span class="tag">Campagne</span>
+            </div>
+            <span class="card-date">2025 - 2026</span>
           </div>
-          <span class="card-date">2025</span>
-        </div>
-        <h3 class="card-title">Social Impact Prize</h3>
-        <p class="card-description">
-          Sviluppo di banner web, asset social e materiali promozionali per la finale del premio nazionale a Milano.
-        </p>
-        <a href="progetti/SIP/indexsip.html" class="card-link" target="_blank">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Ashoka Changemaker Days</h3>
+          <p class="card-description">
+            Identità visiva, naming e asset digitali per i principali raduni della community di Ashoka Italia.
+          </p>
+          <a href="progetti/cmd/indexcmd.html" class="card-link">Scopri il progetto</a>
+        </article>
 
-      <!-- CARD 3 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Web</span>
-            <span class="tag">UX/UI</span>
-            <span class="tag">Branding</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Campagne</span>
+            </div>
+            <span class="card-date">2025</span>
           </div>
-          <span class="card-date">2026</span>
-        </div>
-        <h3 class="card-title">Oniria Landing Page</h3>
-        <p class="card-description">
-          Progettazione UI/UX su Figma e sviluppo frontend per l'evento, integrato e pubblicato su GitHub Pages.
-        </p>
-        <a href="progetti/oniria/indexoniria.html" class="card-link" target="_blank">Scopri il progetto</a>
+          <h3 class="card-title">Social Impact Prize</h3>
+          <p class="card-description">
+            Sviluppo di banner web, asset social e materiali promozionali per la finale del premio nazionale a Milano.
+          </p>
+          <a href="progetti/SIP/indexsip.html" class="card-link" target="_blank">Scopri il progetto</a>
+        </article>
 
-      </article>
-
-      <!-- CARD 4 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Social Media</span>
-            <span class="tag">Campagne</span>
-            <span class="tag">Branding</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Web</span>
+              <span class="tag">UX/UI</span>
+              <span class="tag">Branding</span>
+            </div>
+            <span class="card-date">2026</span>
           </div>
-          <span class="card-date">2022 - 2025</span>
-        </div>
-        <h3 class="card-title">Croce Rossa Italiana Comitato di Gavi</h3>
-        <p class="card-description">
-          Campagne locali di salute e raccolta fondi: Hot Talk (IST), Soccorso Fame (merch) e Walking 4 Her.
-        </p>
-        <a href="progetti/Croce Rossa Comitato di Gavi/indexcri.html" class="card-link">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Oniria Landing Page</h3>
+          <p class="card-description">
+            Progettazione UI/UX su Figma e sviluppo frontend per l'evento, integrato e pubblicato su GitHub Pages.
+          </p>
+          <a href="progetti/oniria/indexoniria.html" class="card-link" target="_blank">Scopri il progetto</a>
+        </article>
 
-      <!-- CARD 5 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Campagne</span>
-            <span class="tag">Social Media</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Social Media</span>
+              <span class="tag">Campagne</span>
+              <span class="tag">Branding</span>
+            </div>
+            <span class="card-date">2022 - 2025</span>
           </div>
-          <span class="card-date">2025</span>
-        </div>
-        <h3 class="card-title">Inspiring Change</h3>
-        <p class="card-description">
-          Sviluppo della brand identity, dei materiali di comunicazione e della landing page dell'evento.
-        </p>
-        <a href="progetti/Inspiringchange/indexinsp.html" class="card-link">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Croce Rossa Italiana Comitato di Gavi</h3>
+          <p class="card-description">
+            Campagne locali di salute e raccolta fondi: Hot Talk (IST), Soccorso Fame (merch) e Walking 4 Her.
+          </p>
+          <a href="progetti/Croce Rossa Comitato di Gavi/indexcri.html" class="card-link">Scopri il progetto</a>
+        </article>
 
-         <!-- CARD 6 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Campagne</span>
-            <span class="tag">Social Media</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Campagne</span>
+              <span class="tag">Social Media</span>
+            </div>
+            <span class="card-date">2025</span>
           </div>
-          <span class="card-date">2025</span>
-        </div>
-        <h3 class="card-title">Mappatura Changemaking</h3>
-        <p class="card-description">
-          Sviluppo della brand identity, dei materiali di comunicazione e della landing page per l'acquisto dell'elaborato.
-        </p>
-        <a href="progetti/mappatura/indexmap.html" class="card-link">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Inspiring Change</h3>
+          <p class="card-description">
+            Sviluppo della brand identity, dei materiali di comunicazione e della landing page dell'evento.
+          </p>
+          <a href="progetti/Inspiringchange/indexinsp.html" class="card-link">Scopri il progetto</a>
+        </article>
 
-      <!-- CARD 7 -->
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Campagne</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Campagne</span>
+              <span class="tag">Social Media</span>
+            </div>
+            <span class="card-date">2025</span>
           </div>
-          <span class="card-date">2022-2026</span>
-        </div>
-        <h3 class="card-title">Presentazioni e pitch deck</h3>
-        <p class="card-description">
-          Progettazione di presentazioni per eventi di natura informativa, workshop e serate networking.
-        </p>
-        <a href="progetti/presnetazioni/indexpres.html" class="card-link">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Mappatura Changemaking</h3>
+          <p class="card-description">
+            Sviluppo della brand identity, dei materiali di comunicazione e della landing page per l'acquisto dell'elaborato.
+          </p>
+          <a href="progetti/mappatura/indexmap.html" class="card-link">Scopri il progetto</a>
+        </article>
 
-     <!--   CARD 5 
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Social Media</span>
+        <article class="project-card">
+          <div class="card-header">
+            <div class="card-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Campagne</span>
+            </div>
+            <span class="card-date">2022-2026</span>
           </div>
-          <span class="card-date">2022 - 2025</span>
-        </div>
-        <h3 class="card-title">Inspiring Change</h3>
-        <p class="card-description">
-          Strategia social e impaginazione di report e summary scaricabili dedicati agli innovatori sociali italiani.
-        </p>
-        <a href="https://ashoka.org/it-it/programma/inspiring-change" class="card-link" target="_blank">Scopri il progetto</a>
-      </article>
+          <h3 class="card-title">Presentazioni e pitch deck</h3>
+          <p class="card-description">
+            Progettazione di presentazioni per eventi di natura informativa, workshop e serate networking.
+          </p>
+          <a href="progetti/presentazioni/indexpres.html" class="card-link">Scopri il progetto</a>
+        </article>
 
-      CARD 6 
-      <article class="project-card">
-        <div class="card-header">
-          <div class="card-tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Social Media</span>
-          </div>
-          <span class="card-date">2026</span>
-        </div>
-        <h3 class="card-title">Identità Territoriali</h3>
-        <p class="card-description">
-          Grafiche e brand identity per iniziative locali: La Voce di Bosio, rete giovanile Gavi Giovani ed eventi.
-        </p>
-        <a href="#" class="card-link">Scopri il progetto</a>
-      </article> -->
-
+      </div> 
     </div> 
-  </div> 
-</section>
+  </section>
 
-<section class="services-section" id="servizi">
-  <div class="services-container">
+  <!-- SEZIONE SERVIZI -->
+  <section class="services-section" id="servizi">
+    <div class="services-container">
+      
+      <div class="services-header">
+        <span class="services-badge">SERVIZI</span>
+        <h2 class="services-title">
+          Cosa posso fare <br>
+          <span class="highlight-green">per te.</span>
+        </h2>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <h3 class="service-card-title">Visual Identity & Branding</h3>
+          <p class="service-card-desc">
+            Logo design, linee guida di brand, sistemi visivi coerenti per organizzazioni a impatto.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-card-title">Digital & Social Media Strategy</h3>
+          <p class="service-card-desc">
+            Piani editoriali, creazione contenuti, campagne digitali e newsletter per il non-profit.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-card-title">Editorial & Event Design</h3>
+          <p class="service-card-desc">
+            Pitch deck, merchandising, grafica pubblicitaria e stampa per eventi e campagne.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contatti">
     
-    <!-- BADGE E TITOLO -->
-    <div class="services-header">
-      <span class="services-badge">SERVIZI</span>
-      <h2 class="services-title">
-        Cosa posso fare <br>
-        <span class="highlight-green">per te.</span>
+    <div class="footer-cta-container">
+      <span class="footer-subtitle">INIZIAMO QUALCOSA DI BELLO</span>
+      
+      <h2 class="footer-title">
+        Hai un progetto in mente <br>
+        o vuoi collaborare?
       </h2>
-    </div>
 
-    <!-- GRID CARD SERVIZI -->
-    <div class="services-grid">
+      <p class="footer-description">
+        Sono sempre aperta a nuove collaborazioni <br>
+        con organizzazioni sociali, enti del terzo <br>
+        settore e progetti creativi con impatto.
+      </p>
 
-      <!-- CARD 1 -->
-      <div class="service-card">
-        <h3 class="service-card-title">Visual Identity & Branding</h3>
-        <p class="service-card-desc">
-          Logo design, linee guida di brand, sistemi visivi coerenti per organizzazioni a impatto.
-        </p>
+      <a href="mailto:sabinacarrea@gmail.com" class="footer-email-btn">
+        sabinacarrea@gmail.com
+      </a>
+
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://www.behance.net/sabinacarrea" target="_blank" class="social-link">Behance</a>
       </div>
+    </div>
 
-      <!-- CARD 2 -->
-      <div class="service-card">
-        <h3 class="service-card-title">Digital & Social Media Strategy</h3>
-        <p class="service-card-desc">
-          Piani editoriali, creazione contenuti, campagne digitali e newsletter per il non-profit.
-        </p>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <div class="copyright">© 2026 Sabina Carrea</div>
+        <div class="footer-tagline">Graphic Design & Social Impact Communication — Gavi</div>
       </div>
-
-      <!-- CARD 3 -->
-      <div class="service-card">
-        <h3 class="service-card-title">Editorial & Event Design</h3>
-        <p class="service-card-desc">
-          Pitch deck, merchandising, grafica pubblicitaria e stampa per eventi e campagne.
-        </p>
-      </div>
-
     </div>
 
-  </div>
-</section>
-<footer class="site-footer" id="contatti">
-  
-  <!-- SEZIONE CTA / CALL TO ACTION -->
-  <div class="footer-cta-container">
-    <span class="footer-subtitle">INIZIAMO QUALCOSA DI BELLO</span>
-    
-    <h2 class="footer-title">
-      Hai un progetto in mente <br>
-      o vuoi collaborare?
-    </h2>
+  </footer>
 
-    <p class="footer-description">
-      Sono sempre aperta a nuove collaborazioni <br>
-      con organizzazioni sociali, enti del terzo <br>
-      settore e progetti creativi con impatto.
-    </p>
-
-    <!-- EMAIL PILL BUTTON -->
-    <a href="mailto:sabinacarrea@gmail.com" class="footer-email-btn">
-      sabinacarrea@gmail.com
-    </a>
-
-    <!-- LINK SOCIAL -->
-    <div class="footer-socials">
-      <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" class="social-link">LinkedIn</a>
-      <a href="https://www.behance.net/sabinacarrea" target="_blank" class="social-link">Behance</a>
-    </div>
-  </div>
-
-  <!-- BANDA BOTTOM COPYRIGHT -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-container">
-      <div class="copyright">© 2026 Sabina Carrea</div>
-      <div class="footer-tagline">Graphic Design & Social Impact Communication — Gavi</div>
-    </div>
-  </div>
-
-</footer>
-
-
+  <script src="script.js"></script>
 </body>
 </html>

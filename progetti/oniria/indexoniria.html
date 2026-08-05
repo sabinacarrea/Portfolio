@@ -1,20 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oniria - Sabina Carrea</title>
+  <title>Inspiring Change - Sabina Carrea</title>
   <link rel="stylesheet" href="../style.css">
+  <!-- Google Fonts: Fraunces e Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- NAVBAR CHIARA CON COLLAPSE MOBILE -->
   <header class="navbar">
-    <div class="logo">Sabina Carrea</div>
-    <nav class="nav-links">
+    <a href="../../index.html" class="logo">Sabina Carrea</a>
+
+    <!-- BOTTONE HAMBURGER MOBILE -->
+    <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-links" id="navLinks">
       <a href="../../index.html#chi-sono">Chi sono</a>
       <a href="../../index.html#progetti">Progetti</a>
       <a href="../../index.html#servizi">Servizi</a>
@@ -22,27 +31,32 @@
     </nav>
   </header>
 
+  <!-- HERO PROGETTO (SCURA) -->
   <section class="project-hero">
     <div class="project-hero-container">
       
+      <!-- COLONNA SINISTRA: TESTI E METADATI -->
       <div class="hero-left-content">
         
-        <div class="project-nav-buttons" style="display: flex; gap: 12px; margin-bottom: 32px;">
+        <!-- BOTTONI -->
+        <div class="project-nav-buttons">
           <a href="../../index.html#progetti" class="btn-back">torna ai progetti</a>
-          <a href="https://sabinacarrea.github.io/oniria/" target="_blank" class="btn-back">Visita il sito</a>
+          <a href="https://www.ashoka.org/it-it/programma/inspiring-change" target="_blank" rel="noopener noreferrer" class="btn-back">Visita il sito</a>
         </div>
 
+        <!-- TITOLO E DESCRIZIONE -->
         <h1 class="project-title">Oniria</h1>
         <p class="project-overview">
-          Una piattaforma digitale per vivere al meglio l'evento di "Oniria" progettato da croce Rossa Regione Piemonte per i giovani della Regione. L'evento è ancora in fase di progettazione.
-        </p>
+          Sviluppo dell'identità visivae della piattaforma web per Oniria, un evento in fase di sviluppo ideato da Croce Rossa Comitato Regionale Piemonte. (l'evento è in fase di progettazione)
 
         <hr class="hero-divider">
 
+        <!-- METADATI -->
         <div class="project-meta">
           <div class="meta-item">
             <span class="meta-label">Cliente</span>
-            <span class="meta-value">Croce Rossa Comitato Regionale Piemonte</span>
+            <span class="meta-value">Giovani - Croce Rossa Comitato Regionale Piemonte
+            </span>
           </div>
           <div class="meta-item">
             <span class="meta-label">Anno</span>
@@ -50,102 +64,56 @@
           </div>
           <div class="meta-item">
             <span class="meta-label">Servizi</span>
-            <span class="meta-value">Web Design, UI/UX </span>
+            <span class="meta-value">Visual System, Web Design </span>
           </div>
         </div>
 
       </div>
 
+      <!-- COLONNA DESTRA: IMMAGINE DI COPERTINA / LOGO -->
       <div class="hero-right-image">
-        <img src="immagini/logo.png" alt="Copertina Progetto Oniria">
+        <img src="immagini/logo.png" alt="Copertina Inspiring Change Ashoka">
       </div>
 
     </div>
   </section>
 
+  <!-- SEZIONE GALLERY MOCKUP (SFONDO BIANCO) -->
   <section class="gallery-section">
     <div class="gallery-container">
       
-      <div class="gallery-header" style="margin-bottom: 40px;">
-        <h2 class="gallery-title">Oniria — UI/UX & Visual Experience</h2>
-        <p class="gallery-subtitle" style="color: #666; font-size: 1.1rem; margin-top: 8px;">
-          Panoramica delle schermate, delle interazioni dinamiche e delle componenti visive create per la piattaforma Oniria.
+      <div class="gallery-header">
+        <h2 class="gallery-title">Oniria</h2>
+        <p class="gallery-subtitle">
+          Panoramica sulla landing Page dell'evento dove gli utenti potranno navigare per conoscere e vivere al meglio l'evento.
         </p>
       </div>
 
+      <!-- GRIGLIA MOCKUP E MATERIALI -->
       <div class="gallery-grid">
         
+        <!-- BLOCK 1: PIATTAFORMA WEB -->
         <div class="gallery-item item-wide">
           <div class="mockup-container">
-            <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+            <video autoplay loop muted playsinline>
               <source src="immagini/Registrazione dello schermo 2026-08-03 170426.mp4" type="video/mp4">
               Il tuo browser non supporta il tag video.
             </video>
           </div>
           <div class="gallery-caption">
-            <h3>Esperienza Web Interattiva</h3>
-            <p>Progettazione del logo, del visual dell'evento e della landing page, semplice e intuitiva per una corretta fruizione dell'evento.</p>
+            <h3>Piattaforma Web</h3>
+            <p>Progettazione e organizzazione visiva della pagina web dedicata all'evento, strutturata per trasmettere in modo chiaro e immediato il funzionamento dell'evento e facilitare la registrazione di partecipanti e stakeholder.</p>
           </div>
         </div>
 
-        
+     
 
       </div>
 
     </div>
   </section>
 
-  <!-- <section class="project-details">
-    <div class="project-details-container">
-      
-      <div class="details-left">
-        <h2 class="section-title">Obiettivo del progetto</h2>
-        <ul class="goals-list">
-          <li>Progettare un'interfaccia coinvolgente che guidi l'utente in un percorso narrativo unico</li>
-          <li>Sperimentare con animazioni, transizioni visive e layout non convenzionali</li>
-          <li>Garantire un'eccellente usabilità e reattività su ogni tipo di dispositivo</li>
-        </ul>
-      </div>
-
-      <div class="details-right">
-        <h2 class="section-title">Il Processo</h2>
-
-        <div class="process-steps">
-          
-          <div class="process-card">
-            <h3 class="process-title">Concept & Moodboard</h3>
-            <p class="process-desc">
-              Ricerca di riferimenti visivi, definizione dell'atmosfera espressiva e ideazione dell'architettura dell'informazione.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <h3 class="process-title">Wireframing & UI Design</h3>
-            <p class="process-desc">
-              Progettazione dei mockup ad alta fedeltà, definizione del sistema di componenti e sviluppo dell'identità visiva.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <h3 class="process-title">Prototipazione & Motion</h3>
-            <p class="process-desc">
-              Studio delle micro-interazioni, realizzazione delle animazioni d'interfaccia e dei contenuti multimediali.
-            </p>
-          </div>
-
-          <div class="process-card">
-            <h3 class="process-title">Sviluppo & Handoff</h3>
-            <p class="process-desc">
-              Implementazione web del progetto e ottimizzazione delle risorse per garantire performance ed estetica.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section> -->
-
+  <!-- FOOTER SCURO -->
   <footer class="site-footer" id="contatti">
     <div class="footer-cta-container">
       <span class="footer-subtitle">INIZIAMO QUALCOSA DI BELLO</span>
@@ -166,8 +134,8 @@
       </a>
 
       <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" class="social-link">LinkedIn</a>
-        <a href="https://www.behance.net/sabinacarrea" target="_blank" class="social-link">Behance</a>
+        <a href="https://www.linkedin.com/in/sabina-carrea-513774183/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+        <a href="https://www.behance.net/sabinacarrea" target="_blank" rel="noopener noreferrer" class="social-link">Behance</a>
       </div>
     </div>
 
@@ -178,6 +146,19 @@
       </div>
     </div>
   </footer>
+
+  <!-- SCRIPT PER NAVBAR MOBILE -->
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

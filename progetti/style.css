@@ -7,7 +7,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* Evita lo scroll orizzontale a livello di pagina dovuto a 100vw */
   overflow-x: hidden; 
 }
 
@@ -19,14 +18,16 @@ body {
   overflow-x: hidden;
 }
 
-/* --- NAVBAR CHIARA --- */
+/* --- NAVBAR CHIARA CON COLLAPSE MOBILE --- */
 .navbar {
   background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 80px;
-  max-width: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
@@ -34,8 +35,10 @@ body {
   font-weight: 700;
   font-size: 1.4rem;
   color: #1E1E1E;
+  text-decoration: none;
 }
 
+/* MENU DESKTOP */
 .nav-links {
   display: flex;
   align-items: center;
@@ -47,6 +50,11 @@ body {
   color: #1E1E1E;
   font-weight: 500;
   font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
 }
 
 .btn-contattami {
@@ -55,6 +63,50 @@ body {
   padding: 10px 24px;
   border-radius: 999px;
   font-weight: 600 !important;
+  transition: transform 0.2s ease, opacity 0.2s ease !important;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-contattami:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* HAMBURGER BUTTON (Nascosto su Desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  z-index: 1001;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #1E1E1E;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Stato attivo pulsante Hamburger (Trasformazione in "X") */
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
 
 /* --- HERO PROGETTO --- */
@@ -74,6 +126,12 @@ body {
 }
 
 /* BOTTONI HERO */
+.project-nav-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
 .btn-back {
   display: inline-block;
   color: #FFFFFF;
@@ -160,13 +218,16 @@ body {
 /* --- SEZIONE GALLERY --- */
 .gallery-section {
   background-color: #FFFFFF;
-  padding: 60px 80px 120px 80px;
-  margin-top: 40px;
+  padding: 60px 80px 100px 80px;
 }
 
 .gallery-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.gallery-header {
+  margin-bottom: 40px;
 }
 
 .gallery-title {
@@ -175,6 +236,12 @@ body {
   font-weight: 700;
   color: #1E1E1E;
   letter-spacing: -0.02em;
+}
+
+.gallery-subtitle {
+  color: #666666;
+  font-size: 1.1rem;
+  margin-top: 8px;
 }
 
 /* LAYOUT GRIGLIA MOCKUP E MATERIALI */
@@ -249,21 +316,12 @@ body {
   grid-column: span 2;
 }
 
-/* ==========================================
-   CAROSELLO FULL WIDTH (CORRETTO)
-   ========================================== */
-
+/* --- CAROSELLO FULL WIDTH CONTINUO --- */
 .square-carousel-section {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  
+  width: 100%;
   overflow: hidden;
-  padding: 40px 0;
-  background-color: transparent;
+  padding: 40px 0 80px 0;
+  background-color: #FFFFFF;
 }
 
 .carousel-container {
@@ -276,7 +334,7 @@ body {
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scrollLeftToRight 25s linear infinite;
+  animation: scrollLeftToRight 35s linear infinite;
   will-change: transform;
 }
 
@@ -308,17 +366,18 @@ body {
 
 @keyframes scrollLeftToRight {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
 }
 
 /* --- SEZIONE DETTAGLI (CHIARA) --- */
 .project-details {
   background-color: #FFFFFF;
-  padding: 100px 80px;
+  padding: 80px 80px 100px 80px;
+  border-top: 1px solid #EAEAEA;
 }
 
 .project-details-container {
@@ -450,6 +509,11 @@ body {
   text-underline-offset: 6px;
   font-size: 0.95rem;
   font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #FFFFFF;
 }
 
 .footer-bottom {
@@ -476,9 +540,56 @@ body {
   color: #FFFFFF;
 }
 
-/* RESPONSIVE DESIGN PER MOBILE E TABLET */
+/* ==========================================================================
+   RESPONSIVE DESIGN & MOBILE NAVBAR COLLAPSE
+   ========================================================================== */
 @media (max-width: 900px) {
-  .navbar, .project-hero, .project-details, .gallery-section {
+  /* NAVBAR MOBILE COLLAPSE */
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .nav-toggle {
+    display: flex; /* Mostra icona hamburger */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+    max-height: 0;
+    overflow: hidden;
+    gap: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  /* Stato quando il menu mobile viene aperto */
+  .nav-links.active {
+    max-height: 350px;
+    padding: 24px 24px 32px 24px;
+    border-top: 1px solid #F0F0F0;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-contattami {
+    width: 100%;
+    max-width: 280px;
+    margin-top: 8px;
+  }
+
+  /* LAYOUT PAGINA MOBILE */
+  .project-hero, .project-details, .gallery-section {
     padding-left: 24px;
     padding-right: 24px;
   }

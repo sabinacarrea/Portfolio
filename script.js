@@ -1,63 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* --- 1. FILTRAGGIO PROGETTI --- */
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // 1. Gestione stato "active" sui bottoni dei filtri
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  if (filterButtons.length > 0 && projectCards.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-      // 2. Recupero il nome del filtro selezionato (in minuscolo)
-      const selectedFilter = button.textContent.trim().toLowerCase();
+        const selectedFilter = button.textContent.trim().toLowerCase();
 
-      // 3. Filtraggio delle card
-      projectCards.forEach(card => {
-        // Estraiamo tutti i tag presenti dentro la singola card
-        const tags = Array.from(card.querySelectorAll('.tag'))
-                          .map(tag => tag.textContent.trim().toLowerCase());
+        projectCards.forEach(card => {
+          const tags = Array.from(card.querySelectorAll('.tag'))
+                            .map(tag => tag.textContent.trim().toLowerCase());
 
-        if (selectedFilter === 'tutti' || tags.includes(selectedFilter)) {
-          card.style.display = 'flex';
-          setTimeout(() => { card.style.opacity = '1'; }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.display = 'none';
-        }
+          if (selectedFilter === 'tutti' || tags.includes(selectedFilter)) {
+            card.style.display = 'flex';
+            setTimeout(() => { card.style.opacity = '1'; }, 10);
+          } else {
+            card.style.opacity = '0';
+            setTimeout(() => { card.style.display = 'none'; }, 300);
+          }
+        });
+
       });
     });
-  });
-});
+  }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".carousel-card");
-    let currentIndex = 0;
+  /* --- 2. NAVBAR HAMBURGER MENU (MOBILE) --- */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
 
-    function updateCarousel() {
-      cards.forEach((card, index) => {
-        // Rimuove tutte le classi di stato
-        card.classList.remove("active", "next", "prev");
+  if (menuToggle && navLinks) {
+    
+    // Toggle menu
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
 
-        // Calcola l'indice precedente (a destra) e successivo (a sinistra)
-        const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
-        const nextIndex = (currentIndex + 1) % cards.length;
-
-        if (index === currentIndex) {
-          card.classList.add("active"); // Immagine corrente al centro (grande)
-        } else if (index === nextIndex) {
-          card.classList.add("next");   // Prossima immagine a sinistra
-        } else if (index === prevIndex) {
-          card.classList.add("prev");   // Immagine passata a destra
-        }
+    // Chiudi al click su un link
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
       });
+    });
 
-      // Avanza all'immagine successiva
-      currentIndex = (currentIndex + 1) % cards.length;
-    }
+    // Chiudi al click fuori dal menu
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
 
-    // Inizializza il carosello
-    updateCarousel();
+  }
 
-    // Cambia immagine automaticamente ogni 3 secondi (3000ms)
-    setInterval(updateCarousel, 3000);
-  });
+});
