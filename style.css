@@ -157,9 +157,9 @@ body {
 }
 
 .hero-title em {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 600;
+font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 700;
 }
 
 .hero-subtitle {
@@ -205,12 +205,13 @@ body {
 }
 
 /* --- SEZIONE CHI SONO --- */
-.about-section {
+.about-section { 
   background-color: #1E1E1E;
   color: #EAEAEA;
   padding: 100px 80px;
   font-family: var(--font-sans);
 }
+
 
 .about-container {
   max-width: 1300px;
@@ -244,7 +245,6 @@ body {
 
 .about-title em {
   font-family: var(--font-serif);
-  font-style: italic;
   font-weight: 600;
   color: #9B53D3;
 }
